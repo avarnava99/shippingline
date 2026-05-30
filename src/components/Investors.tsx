@@ -9,9 +9,27 @@ import {
   Anchor,
   Target,
   Zap,
+  ShieldCheck,
+  Package,
+  Handshake,
+  BadgePercent,
 } from "lucide-react";
 
 const TRADE_STATS = [
+  {
+    route: "Greece — Cyprus",
+    value: "$3.2B",
+    detail: "Annual imports to Cyprus",
+    growth: "+11.9%",
+    note: "Greece is Cyprus's #1 import partner — highest volume in a decade",
+  },
+  {
+    route: "Italy — Cyprus",
+    value: "$1.0B",
+    detail: "Annual imports to Cyprus",
+    growth: null,
+    note: "Italy is a top-3 import partner — consumer goods, machinery, food",
+  },
   {
     route: "Italy — Greece",
     value: "$9.1B",
@@ -19,30 +37,16 @@ const TRADE_STATS = [
     growth: "+10.5%",
     note: "Italy is Greece's #1 export destination",
   },
-  {
-    route: "Greece — Cyprus",
-    value: "$3.5B",
-    detail: "Annual bilateral trade",
-    growth: "+11.9%",
-    note: "Highest level in a decade (2024)",
-  },
-  {
-    route: "Italy — Cyprus",
-    value: "$1.0B",
-    detail: "Annual imports to Cyprus",
-    growth: null,
-    note: "Italy is a top-3 import partner for Cyprus",
-  },
 ];
 
 const PORT_VOLUMES = [
   {
-    port: "Venice",
-    country: "Italy",
-    teu: "533K",
-    year: "2025",
-    growth: "+11.2%",
-    flag: "🇮🇹",
+    port: "Limassol",
+    country: "Cyprus",
+    teu: "500K",
+    year: "2024",
+    growth: "+8-9%",
+    flag: "\u{1F1E8}\u{1F1FE}",
   },
   {
     port: "Piraeus",
@@ -50,42 +54,96 @@ const PORT_VOLUMES = [
     teu: "4.2M",
     year: "2024",
     growth: null,
-    flag: "🇬🇷",
+    flag: "\u{1F1EC}\u{1F1F7}",
   },
   {
-    port: "Limassol",
-    country: "Cyprus",
-    teu: "500K",
-    year: "2024",
-    growth: "+8-9%",
-    flag: "🇨🇾",
+    port: "Venice",
+    country: "Italy",
+    teu: "533K",
+    year: "2025",
+    growth: "+11.2%",
+    flag: "\u{1F1EE}\u{1F1F9}",
   },
 ];
 
 const MARKET_HIGHLIGHTS = [
   {
+    icon: DollarSign,
+    stat: "$4.2B",
+    label: "Imports",
+    detail: "Cyprus imports from Greece & Italy annually",
+  },
+  {
     icon: TrendingUp,
     stat: "5.9%",
     label: "CAGR",
-    detail: "Global feeder ship market growth rate through 2033",
-  },
-  {
-    icon: Globe,
-    stat: "$8.3B",
-    label: "Market Size",
-    detail: "Global feeder ship market (2025)",
+    detail: "Global feeder ship market growth through 2033",
   },
   {
     icon: BarChart3,
-    stat: "100.9M",
+    stat: "500K",
     label: "TEU",
-    detail: "EU container handling peak in 2024 (+4.4% YoY)",
+    detail: "Containers through Limassol yearly — and growing",
   },
   {
-    icon: DollarSign,
+    icon: Globe,
     stat: "$13.6B",
-    label: "Trade Corridor",
+    label: "Corridor",
     detail: "Combined Italy-Greece-Cyprus bilateral trade",
+  },
+];
+
+const PAIN_POINTS = [
+  {
+    icon: Package,
+    title: "Opaque Pricing",
+    problem:
+      "You request quotes by email, wait hours or days, and never know if you're getting a fair rate. Every shipment is a negotiation.",
+    solution:
+      "Instant online quotes with transparent dynamic pricing. See exactly how the rate is calculated.",
+  },
+  {
+    icon: Ship,
+    title: "Unreliable Schedules",
+    problem:
+      "Mainline carriers deprioritize feeder routes. Your containers get rolled, delayed, or rerouted through hubs that add days.",
+    solution:
+      "Dedicated weekly service, Venice-Piraeus-Limassol direct. Fixed schedule, guaranteed space.",
+  },
+  {
+    icon: BarChart3,
+    title: "Cost Volatility",
+    problem:
+      "Med freight rates swung from $2,500 to $4,000+ per FEU in 2024. You can't plan procurement costs when freight is a moving target.",
+    solution:
+      "Dynamic pricing that trends down when you book early. Lock in rates 24h. Predictable costs.",
+  },
+];
+
+const PARTNER_BENEFITS = [
+  {
+    icon: BadgePercent,
+    title: "Preferential Rates",
+    detail:
+      "Investor-partners get founding shipper pricing — locked-in discounts below market rate for the first 2 years.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Guaranteed Allocation",
+    detail:
+      "Priority container space on every sailing. No rollovers, no bumping — your cargo moves on schedule.",
+  },
+  {
+    icon: Handshake,
+    title: "Equity Upside",
+    detail:
+      "Invest in the shipping line that serves your own supply chain. As the service grows, so does your return.",
+  },
+  {
+    icon: Target,
+    title: "Advisory Role",
+    detail:
+      "Shape the service. Your import expertise helps us optimize routes, schedules, and cargo mix.",
   },
 ];
 
@@ -135,18 +193,19 @@ export default function Investors() {
         {/* Section Header */}
         <div className="text-center mb-20">
           <p className="text-ocean-500 font-semibold text-sm uppercase tracking-widest mb-3">
-            Investment Opportunity
+            For Cyprus Importers &amp; Investors
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-5">
-            A $13.6B trade corridor,
+            Your supply chain.
             <br />
-            zero digital-first shipping lines
+            Your shipping line.
           </h2>
           <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
-            The Eastern Mediterranean moves billions in containerized trade
-            between Italy, Greece, and Cyprus every year &mdash; yet shippers
-            still book by phone, email, and spreadsheet. ShippingLine is
-            changing that.
+            Cyprus imports $4.2 billion from Greece and Italy every year.
+            Every container arrives through agents, opaque pricing, and
+            unpredictable schedules. We&apos;re building the alternative
+            &mdash; and inviting the importers who feel this pain to own a
+            piece of it.
           </p>
         </div>
 
@@ -171,14 +230,82 @@ export default function Investors() {
           ))}
         </div>
 
+        {/* The Problem — Cyprus Importer Pain Points */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
+            The problem you know too well
+          </h3>
+          <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
+            If you import goods to Cyprus from Italy or Greece, this is your
+            reality today.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {PAIN_POINTS.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl border border-slate-100 overflow-hidden"
+              >
+                <div className="p-6 border-b border-slate-100">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-red-500" />
+                    </div>
+                    <h4 className="font-bold text-navy-900">{item.title}</h4>
+                  </div>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    {item.problem}
+                  </p>
+                </div>
+                <div className="p-6 bg-ocean-50/50">
+                  <div className="text-xs font-bold text-ocean-600 uppercase tracking-wider mb-2">
+                    With ShippingLine
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    {item.solution}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Partner — Benefits for Importer-Investors */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
+            Why invest as an importer
+          </h3>
+          <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
+            You&apos;re not just an investor &mdash; you&apos;re a founding
+            shipper. You save on freight and earn on growth.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PARTNER_BENEFITS.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl p-6 border border-slate-100 text-center"
+              >
+                <div className="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-gold-500" />
+                </div>
+                <h4 className="font-bold text-navy-900 mb-2">{item.title}</h4>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Trade Corridor Stats */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
-            The trade corridor
+            The trade flowing into Cyprus
           </h3>
           <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
-            Three countries with deep, growing bilateral trade &mdash; and a
-            shipping corridor that&apos;s ripe for digital disruption.
+            Billions in bilateral trade &mdash; growing every year &mdash;
+            with no dedicated digital shipping service.
           </p>
 
           <div className="grid md:grid-cols-3 gap-5">
@@ -261,8 +388,8 @@ export default function Investors() {
               </div>
             ))}
             <div className="px-6 py-3 bg-slate-50 text-xs text-slate-400">
-              Sources: North Adriatic Sea Port Authority, Piraeus Port
-              Authority, Eurogate Limassol
+              Sources: Eurogate Limassol, Piraeus Port Authority, North
+              Adriatic Sea Port Authority
             </div>
           </div>
         </div>
@@ -328,7 +455,7 @@ export default function Investors() {
                     "Charter 500 TEU feeder vessel",
                     "Lease initial container fleet (200-300 units)",
                     "Launch Venice-Piraeus-Limassol weekly service",
-                    "Target 50% utilization by month 6",
+                    "Onboard founding shipper-investors with preferential rates",
                   ],
                 },
                 {
@@ -396,18 +523,18 @@ export default function Investors() {
         <div className="text-center bg-navy-950 rounded-3xl p-10 sm:p-14">
           <Anchor className="w-10 h-10 text-gold-400 mx-auto mb-4" />
           <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Interested in investing?
+            Become a founding shipper-investor
           </h3>
           <p className="text-slate-400 max-w-xl mx-auto mb-6">
-            We&apos;re raising a seed round to charter our first vessel and
-            launch the Venice-Piraeus-Limassol service. Get in touch to learn
-            more.
+            We&apos;re raising a seed round from the importers who will use
+            the service. Preferential rates, guaranteed space, and equity in
+            the shipping line that serves your supply chain.
           </p>
           <a
             href="mailto:invest@shippingline.com"
             className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 px-8 py-3.5 rounded-xl font-bold transition-colors"
           >
-            Contact Us <ArrowUpRight className="w-4 h-4" />
+            Partner With Us <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
       </div>
