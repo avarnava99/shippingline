@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import Schedule from "@/components/Schedule";
 import DynamicPricing from "@/components/DynamicPricing";
 import About from "@/components/About";
+import Investors from "@/components/Investors";
 import Footer from "@/components/Footer";
 import { ArrowRight, Ship } from "lucide-react";
 
@@ -108,6 +109,7 @@ export default function Home() {
       <Schedule />
       <DynamicPricing />
       <About />
+      <Investors />
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-ocean-500 to-ocean-400">
