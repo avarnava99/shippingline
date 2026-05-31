@@ -150,11 +150,11 @@ const PARTNER_BENEFITS = [
 const BUSINESS_MODEL = [
   {
     icon: Ship,
-    title: "Asset-Light Operations",
+    title: "Shoham Operates",
     points: [
-      "Charter vessel: ~$15-25K/day for a 500 TEU feeder",
-      "Lease containers: ~$5-8/day per TEU",
-      "No massive CapEx — focus capital on technology and growth",
+      "Shoham manages the vessel, crew, and commercial operations",
+      "Full operational control under a Ship Management Agreement",
+      "Importers invest and ship — Shoham runs the service",
     ],
   },
   {
@@ -168,11 +168,11 @@ const BUSINESS_MODEL = [
   },
   {
     icon: Target,
-    title: "Market Positioning",
+    title: "Asset-Light Model",
     points: [
-      "Underserved niche: no digital-first line on this corridor",
-      "Compete on UX and price transparency, not fleet size",
-      "Expand to additional East Med routes as demand proves out",
+      "Charter vessel: ~$15-25K/day for a 500 TEU feeder",
+      "Lease containers: ~$5-8/day per TEU",
+      "No massive CapEx — capital focused on technology and growth",
     ],
   },
   {
@@ -394,13 +394,86 @@ export default function Investors() {
           </div>
         </div>
 
+        {/* Structure */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
+            How it&apos;s structured
+          </h3>
+          <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
+            Clear separation: Shoham operates, importers invest and ship.
+            Everyone&apos;s incentives are aligned.
+          </p>
+
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-100 overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="p-8 border-b md:border-b-0 md:border-r border-slate-100">
+                <div className="inline-flex items-center gap-2 bg-navy-900 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                  <Ship className="w-3.5 h-3.5" />
+                  Operator
+                </div>
+                <h4 className="text-xl font-bold text-navy-900 mb-3">
+                  Shoham
+                </h4>
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0" />
+                    Manages and operates the vessel under a Ship Management Agreement
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0" />
+                    Controls pricing, scheduling, crewing, and commercial decisions
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0" />
+                    Builds and operates the digital booking platform
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0" />
+                    Holds majority voting rights — operational autonomy is protected
+                  </li>
+                </ul>
+              </div>
+              <div className="p-8">
+                <div className="inline-flex items-center gap-2 bg-gold-500 text-navy-950 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                  <Handshake className="w-3.5 h-3.5" />
+                  Founding Shippers
+                </div>
+                <h4 className="text-xl font-bold text-navy-900 mb-3">
+                  Cyprus Importers
+                </h4>
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-1.5 shrink-0" />
+                    Invest in ShippingLine via equity or revenue-share instruments
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-1.5 shrink-0" />
+                    Receive preferential freight rates and guaranteed space
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-1.5 shrink-0" />
+                    Commit minimum cargo volume — de-risking the service from day one
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-1.5 shrink-0" />
+                    Advisory seats on the board — influence without operational control
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="px-8 py-4 bg-slate-50 text-center text-sm text-slate-500 border-t border-slate-100">
+              Shipping benefits via Founding Shipper Agreement &bull; Investment via separate financial instrument &bull; Clean separation of interests
+            </div>
+          </div>
+        </div>
+
         {/* Business Model */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
             The business model
           </h3>
           <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
-            Asset-light, tech-heavy, and designed to scale.
+            Shoham operates. Technology differentiates. Importers de-risk.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -452,10 +525,10 @@ export default function Investors() {
                   title: "Launch",
                   timeline: "Months 1-6",
                   items: [
-                    "Charter 500 TEU feeder vessel",
+                    "Shoham charters 500 TEU feeder vessel and assumes management",
                     "Lease initial container fleet (200-300 units)",
                     "Launch Venice-Piraeus-Limassol weekly service",
-                    "Onboard founding shipper-investors with preferential rates",
+                    "Onboard 5-10 founding shipper-investors with preferential rates",
                   ],
                 },
                 {
@@ -526,9 +599,9 @@ export default function Investors() {
             Become a founding shipper-investor
           </h3>
           <p className="text-slate-400 max-w-xl mx-auto mb-6">
-            We&apos;re raising a seed round from the importers who will use
-            the service. Preferential rates, guaranteed space, and equity in
-            the shipping line that serves your supply chain.
+            Shoham is raising a seed round from the Cyprus importers who
+            will use the service. You get preferential rates and guaranteed
+            space. We get committed volume and aligned partners.
           </p>
           <a
             href="mailto:invest@shippingline.com"
