@@ -17,18 +17,18 @@ import {
 
 const TRADE_STATS = [
   {
+    route: "Italy — Cyprus",
+    value: "€988M",
+    detail: "Total imports from Italy (2025)",
+    growth: "+2%",
+    note: "EUR 762M containerizable — 77% of total and growing year on year",
+  },
+  {
     route: "Greece — Cyprus",
     value: "$3.2B",
     detail: "Annual imports to Cyprus",
     growth: "+11.9%",
-    note: "Greece is Cyprus's #1 import partner — highest volume in a decade",
-  },
-  {
-    route: "Italy — Cyprus",
-    value: "$1.0B",
-    detail: "Annual imports to Cyprus",
-    growth: null,
-    note: "Italy is a top-3 import partner — consumer goods, machinery, food",
+    note: "Greece is Cyprus's #1 import partner — highest level in a decade",
   },
   {
     route: "Italy — Greece",
@@ -37,6 +37,19 @@ const TRADE_STATS = [
     growth: "+10.5%",
     note: "Italy is Greece's #1 export destination",
   },
+];
+
+const ITALY_IMPORTS = [
+  { product: "Iron & steel", value: 90, growth: 12 },
+  { product: "Metal articles", value: 80, growth: -9 },
+  { product: "Apparel & fashion", value: 100, growth: -5 },
+  { product: "Pharmaceuticals", value: 36, growth: 27 },
+  { product: "Plastics", value: 32, growth: -3 },
+  { product: "Machinery", value: 32, growth: -11 },
+  { product: "Ceramics & tiles", value: 31, growth: 7 },
+  { product: "Beverages & wine", value: 26, growth: 5 },
+  { product: "Footwear", value: 25, growth: 8 },
+  { product: "Food products", value: 41, growth: 13 },
 ];
 
 const PORT_VOLUMES = [
@@ -69,15 +82,15 @@ const PORT_VOLUMES = [
 const MARKET_HIGHLIGHTS = [
   {
     icon: DollarSign,
-    stat: "$4.2B",
-    label: "Imports",
-    detail: "Cyprus imports from Greece & Italy annually",
+    stat: "€762M",
+    label: "Containerizable",
+    detail: "Italian goods arriving in Cyprus by container annually",
   },
   {
     icon: TrendingUp,
-    stat: "5.9%",
-    label: "CAGR",
-    detail: "Global feeder ship market growth through 2033",
+    stat: "77%",
+    label: "And Growing",
+    detail: "Share of containerizable imports — up from 60% in 2021",
   },
   {
     icon: BarChart3,
@@ -201,11 +214,12 @@ export default function Investors() {
             Your shipping line.
           </h2>
           <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
-            Cyprus imports $4.2 billion from Greece and Italy every year.
-            Every container arrives through agents, opaque pricing, and
-            unpredictable schedules. We&apos;re building the alternative
-            &mdash; and inviting the importers who feel this pain to own a
-            piece of it.
+            EUR 762 million in containerizable goods flow from Italy to
+            Cyprus every year &mdash; steel, fashion, ceramics, food, wine,
+            pharmaceuticals. Every container arrives through agents, opaque
+            pricing, and unpredictable schedules. We&apos;re building the
+            alternative &mdash; and inviting the importers who feel this
+            pain to own a piece of it.
           </p>
         </div>
 
@@ -336,6 +350,53 @@ export default function Investors() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Italy Import Breakdown */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
+            What Cyprus imports from Italy
+          </h3>
+          <p className="text-slate-500 text-center mb-8 max-w-2xl mx-auto">
+            EUR 762M in containerizable goods (2025). These are the products
+            your businesses import &mdash; and the cargo our vessels will
+            carry.
+          </p>
+
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-slate-100 overflow-hidden">
+            <div className="grid grid-cols-12 px-6 py-3 bg-slate-50 text-xs font-semibold text-slate-500 uppercase tracking-wider border-b border-slate-100">
+              <div className="col-span-5">Product</div>
+              <div className="col-span-4 text-right">Annual Value</div>
+              <div className="col-span-3 text-right">YoY Change</div>
+            </div>
+            {ITALY_IMPORTS.map((item) => (
+              <div
+                key={item.product}
+                className="grid grid-cols-12 px-6 py-3 border-b border-slate-50 last:border-0 items-center"
+              >
+                <div className="col-span-5 font-medium text-navy-900 text-sm">
+                  {item.product}
+                </div>
+                <div className="col-span-4 text-right text-sm text-slate-600">
+                  EUR {item.value}M
+                </div>
+                <div className="col-span-3 text-right">
+                  <span
+                    className={`text-sm font-semibold ${
+                      item.growth > 0 ? "text-emerald-600" : "text-slate-400"
+                    }`}
+                  >
+                    {item.growth > 0 ? "+" : ""}
+                    {item.growth}%
+                  </span>
+                </div>
+              </div>
+            ))}
+            <div className="px-6 py-3 bg-slate-50 text-xs text-slate-400 border-t border-slate-100">
+              Source: Cyprus Statistical Service (CyStat) — Foreign Trade
+              Statistics, 2025 data
+            </div>
           </div>
         </div>
 
